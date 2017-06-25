@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1 Date Advisor
+  p.lead A simple site for finding your next date activity
+  hr
+  .row
+    #map.col-sm-8
+    
+    #feed.col-sm-3
+      form
+        .form-group
+          button#refresh.btn.btn-default(type='refresh') Refresh!
+        .form-group
+          label(for='description') Activity Description
+          input#description.form-control(type='text', placeholder='What\'s there to do?')
+        .form-group
+          label(for='address') Address
+          input.autocomplete#address.form-control(type='text', onfocus='geolocate()', placeholder='Where\'s it at?')
+        .form-group
+          label(for='category') Category
+          input#category.form-control(type='text', placeholder='What\'s the activity?')
+        .form-group
+          button#submit.btn.btn-default(type='submit') Submit!
+        .form-group
+          button#update.btn.btn-default(type='update') Update!
+        .form-group
+          button#delete.btn.btn-default(type='delete') Delete!
